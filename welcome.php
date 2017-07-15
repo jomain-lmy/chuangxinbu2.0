@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">
+        <title>成功</title>
+    </head>
+    <body>
+
+
+
 <?php
 
 session_start();
@@ -39,3 +49,6 @@ echo "success";
 $conn->close();
 
 ?>
+
+</body>
+</html>
