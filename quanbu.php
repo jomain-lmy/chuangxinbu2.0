@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>good</title>
+
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+
+
+
+
 <?php
 session_start();
 $servername = "localhost";
@@ -50,3 +63,6 @@ mysqli_close($conn);
 
 
 ?>
+
+</body>
+</html>
