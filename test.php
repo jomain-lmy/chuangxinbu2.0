@@ -17,6 +17,8 @@
             $qqhao = $_POST['qqhao'];
             $jineng = $_POST['jineng'];
             $xingqu = $_POST['xingqu'];
+            if($mingzhi!="")
+            {
             
             //创建
             $conn = new mysqli ($servername,$username,$password);
@@ -40,19 +42,24 @@
             {
                 die('fild:'. mysqli_error($conn));
             }
-            echo "success";
+            echo "报名成功";
             $conn->close();
             
 
 
  //    		header('Content-type: text/html; charset=UTF8'); 
 //			echo '<font color="#0000CC">输入正确</font>';
-     	}
+         }
+        }
+        else {
+            echo "请填完表格";
+        }
      	else{
             header('Content-type: text/html; charset=UTF8'); 
 			echo '<font color="#CC0000"><b>输入错误,请返回</b></font>';
      	    }
-     	exit();
+         exit();
+        
      }
 
 ?>
