@@ -2,13 +2,17 @@
 <html>
 
 <head>
+   
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ahusic</title>
 
     <meta charset="utf-8">
-    <base href="http://123.206.189.54/hello/">
+    <base href="http://127.0.0.1/fuck/">
     <style>
+        .error {
+            color: #FF0000;
+        }
         body {
             background-image: url('images/pikaqiu.jpg');
             background-repeat: no-repeat;
@@ -20,7 +24,7 @@
         
         .center {
             margin: auto;
-            width: 70%;
+            width: 60%;
         }
         
         .right {
@@ -38,19 +42,23 @@
     <br>
     <h1>安大科协创新部报名表</h1>
 
-    <form action="welcome.php" method="post">
+    <form action="test.php" method="post">
         <div class="center">
-            <br> 姓&nbsp;&nbsp;名&nbsp;&nbsp;: &nbsp;&nbsp;<input type="text" name="fname">
+            <br> 姓&nbsp;&nbsp;名&nbsp;&nbsp;: &nbsp;&nbsp;<input type="text" name="fname"><span class="error">*</span>
             <br> 性&nbsp;&nbsp;别&nbsp;&nbsp;:&nbsp;&nbsp;
             <input type="radio" name="sex" value="male">男
-            <input type="radio" name="sex" value="female">女<br> 院系专业:
+            <input type="radio" name="sex" value="female">女<span class="error">*</span><br> 院系专业:
 
-            <input type="text" name="zuanye"><br> 手机号码:
+            <input type="text" name="zuanye"><span class="error">*</span><br> 手机号码:
             <input type="text" name="shouji"><br> Q&nbsp;Q号码&nbsp;:
-            <input type="text" name="qqhao"><br> 已经掌握的技能:
+            <input type="text" name="qqhao"><span class="error">*</span><br> 已经掌握的技能:
             <br><textarea name="jineng" rows="5" cols="35"></textarea>
             <br> 兴趣方向:
             <br><textarea name="xingqu" rows="5" cols="35"></textarea>
+            <p>验证码图片：<img id="captcha_img" border="1" src="./captcha.php?r=<?php echo rand();?>" width="100" height="30">
+                <a href="javascript:void(0)" onClick="document.getElementById('captcha_img').src='./captcha.php?r='+Math.random()">换一个？</a>
+               </p>
+               <p>图片内容：<input type="text" name="authcode" value=""/></p>
         </div>
         <div class="right">
             <input class="biaoge" type="submit" value="提交">
