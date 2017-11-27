@@ -1,9 +1,6 @@
 <?php
-     
-     if(isset($_REQUEST['authcode']))
-     {
-     	session_start();
-     	if (strtolower($_REQUEST['authcode'])==$_SESSION['authcode']) 
+	    session_start();
+    	if (strtolower($_REQUEST['authcode'])==$_SESSION['authcode']) 
      	{
 
             $servername = "localhost";
@@ -17,9 +14,10 @@
             $qqhao = $_POST['qqhao'];
             $jineng = $_POST['jineng'];
             $xingqu = $_POST['xingqu'];
-            if($mingzhi!="")
-            {
             
+           
+	if($mingzhi != "")
+	{ 
             //创建
             $conn = new mysqli ($servername,$username,$password);
             
@@ -43,23 +41,36 @@
                 die('fild:'. mysqli_error($conn));
             }
             echo "报名成功";
+		 
+		//重定向浏览器 
+		header("Location: http://123.206.189.54/ahusci/success.html"); 
+		//确保重定向后，后续代码不会被执行 
+		exit;
+		
+
+
+
+ 
             $conn->close();
-            
+            }
 
 
  //    		header('Content-type: text/html; charset=UTF8'); 
 //			echo '<font color="#0000CC">输入正确</font>';
-         }
+         
+	else {
+	echo "请完成表格";
         }
-        else {
-            echo "请填完表格";
-        }
+}        
      	else{
             header('Content-type: text/html; charset=UTF8'); 
-			echo '<font color="#CC0000"><b>输入错误,请返回</b></font>';
+			echo '<font color="#CC0000"><b>验证码输入错误,请返回</b></font>';
      	    }
          exit();
-        
-     }
 
+
+
+
+
+echo "fuckyou";
 ?>

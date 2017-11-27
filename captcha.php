@@ -25,7 +25,7 @@
       	$fontcolor=imagecolorallocate($image, rand(0,120), rand(0,120), rand(0,120));//字体颜色
         
         $data='abcdefghijkmnpqrstuvwxy0123456789';
-        $fontcontent=substr($data, rand(0,strlen($data)),1);
+        $fontcontent=substr($data, rand(0,strlen($data)-1),1);
         $captch_code.=$fontcontent;
 
         $x=($i*25)+rand(5,10);
